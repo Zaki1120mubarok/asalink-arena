@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-arena-black: #0B0F19;
+  --color-arena-dark: #111827;
+  --color-arena-white: #FFFFFF;
+  --color-arena-surface: #F4F7FE;
+  --color-arena-blue: #1D4ED8;
+  --color-arena-purple: #7C3AED;
+  --color-arena-electric: #00E5FF;
+  --color-arena-orange: #F97316;
+
+  --shadow-electric: 0 0 20px rgba(0, 229, 255, 0.35);
+  --shadow-orange: 0 8px 20px rgba(249, 115, 22, 0.28);
+}
+
+body {
+  background-color: #F4F7FE;
+  color: #0B0F19;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}

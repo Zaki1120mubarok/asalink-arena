@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int        @id @default(autoincrement())
+  nama      String
+  email     String     @unique
+  password  String
+  createdAt DateTime   @default(now())
+  questions Question[]
+}
+
+model Question {
+  id         Int      @id @default(autoincrement())
+  mapel      String
+  bab        String
+  tipe       String
+  bloom      String
+  kesulitan  String
+  durasi     Int
+  teks       String
+  opsiA      String
+  opsiB      String
+  opsiC      String
+  opsiD      String
+  kunci      String
+  pembahasan String?
+  reviewed   Boolean  @default(true)
+  authorId   Int
+  author     User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+}
